@@ -1,5 +1,6 @@
 import * as http from 'http';
 import * as debugModule from 'debug';
+import * as mongoose from 'mongoose';
 
 import app from './app';
 
@@ -35,6 +36,17 @@ const server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+// make bluebird default Promise
+Promise = require('bluebird'); // eslint-disable-line no-global-assign
+
+// plugin bluebird promise in mongoose
+// (<any>mongoose).Promise = Promise;
+
+// const MONGODB_CONNECTION = 'mongodb://nikhil1210:mongodb1@ds037817,mlab.com:37817/convux';
+// mongoose.connect(MONGODB_CONNECTION, { server: { socketOptions: { keepAlive: 1 } } });
+// mongoose.connection.on('error', () => {
+//   throw new Error(`unable to connect to database: ${MONGODB_CONNECTION}`);
+// });
 
 /**
  * Normalize a port into a number, string, or false.

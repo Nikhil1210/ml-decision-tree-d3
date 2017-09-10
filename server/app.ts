@@ -32,11 +32,11 @@ class App{
      }
 
      private configureDB():void{
-        const MONGODB_CONNECTION = 'mongodb://nikhil1210:mongodb1@ds037817,mlab.com:37817/convux';
-       mongoose.connect(MONGODB_CONNECTION, { server: { socketOptions: { keepAlive: 1 } } });
-        mongoose.connection.on('error', () => {
-        throw new Error("unable to connect to database:" +MONGODB_CONNECTION);
-        });
+    //     const MONGODB_CONNECTION = 'mongodb://nikhil1210:mongodb1@ds037817,mlab.com:37817/convux';
+    //    mongoose.connect(MONGODB_CONNECTION, { server: { socketOptions: { keepAlive: 1 } } });
+    //     mongoose.connection.on('error', () => {
+    //     throw new Error("unable to connect to database:" +MONGODB_CONNECTION);
+    //     });
      }
      private routes():void{
          let router = express.Router();

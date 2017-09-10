@@ -23,11 +23,12 @@ export default class ModelController{
      * GetModelData
      */
     public GetModelData(req: Request,res:Response) {
-        model.find().sort({ createdAt: -1 }).exec((err, result) => {
-        if (err) {
-            return res.send(500);
-        }
-        return res.json(result);
-    });
+    //     model.find().sort({ createdAt: -1 }).exec((err, result) => {
+    //     if (err) {
+    //         return res.send(500);
+    //     }
+    //     return res.json(result);
+    // });
+            return res.json('model data');
     }
 }
