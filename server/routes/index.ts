@@ -1,6 +1,6 @@
 import * as express from 'express';
-// import userRoutes from './user.route';
-// import authRoutes from './auth.route';
+ import modelRoutes from './model.route';
+ import predictionsRoutes from './predictions.route';
 // import postRoutes from './post.route';
 // import agentRoutes from './agent.route';
 
@@ -11,11 +11,11 @@ router.get('/health-check', (req, res) =>
     res.send('OK')
 );
 
-// mount user routes at /users
-// router.use('/users', userRoutes);
+// mount model routes at /model
+ router.use('/model', modelRoutes);
 
-// // mount auth routes at /auth
-// router.use('/auth', authRoutes);
+ // mount auth routes at /auth
+ router.use('/predictions', predictionsRoutes);
 
 // router.use('/agents', agentRoutes);
 // router.use('/posts', postRoutes);

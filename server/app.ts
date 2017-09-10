@@ -4,7 +4,9 @@ import * as bodyParser from 'body-parser';
 import * as path from 'path';
 import * as logger from 'morgan';
 import * as mongoose from 'mongoose';
-import routes from "./routes";
+import routes from './routes';
+// import cors from 'cors';
+
 // Creates and configure expressJS web server
 class App{
     public express: express.Application;
@@ -23,18 +25,18 @@ class App{
          this.express.use(logger('dev'));
          this.express.use(bodyParser.json());
          this.express.use(bodyParser.urlencoded({extended:false}));
-         //this.express.use(cookieParser());
+         // this.express.use(cookieParser());
          this.express.use(express.static(path.join(__dirname, 'public')));
+        // enable CORS - Cross Origin Resource Sharing
+        //  this.express.use(cors());
      }
 
      private configureDB():void{
-         const MONGODB_CONNECTION:string = "mongodb://nikhil1210:mongodb1@ds037817,mlab.com:37817/convux"
-         // connect to db
-        //  let connection: mongoose.Connection = mongoose.createConnection(MONGODB_CONNECTION);
-        mongoose.connect(MONGODB_CONNECTION, { server: { socketOptions: { keepAlive: 1 } } });
-mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database: ${MONGODB_CONNECTION}`);
-});
+        const MONGODB_CONNECTION = 'mongodb://nikhil1210:mongodb1@ds037817,mlab.com:37817/convux';
+       mongoose.connect(MONGODB_CONNECTION, { server: { socketOptions: { keepAlive: 1 } } });
+        mongoose.connection.on('error', () => {
+        throw new Error("unable to connect to database:" +MONGODB_CONNECTION);
+        });
      }
      private routes():void{
          let router = express.Router();
@@ -46,9 +48,9 @@ mongoose.connection.on('error', () => {
          this.express.use('/api', routes);
 
         // Default to main page, angular route takes over
-        this.express.use((req, res) => {
-        res.sendFile(path.join(__dirname, 'public/index.html'));
-        });
+        // this.express.use((req, res) => {
+        // res.sendFile(path.join(__dirname, 'public/index.html'));
+        // });
 
      }
 
