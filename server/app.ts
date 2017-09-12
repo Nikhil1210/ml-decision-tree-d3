@@ -48,9 +48,9 @@ class App{
          this.express.use('/api', routes);
 
         // Default to main page, angular route takes over
-        // this.express.use((req, res) => {
-        // res.sendFile(path.join(__dirname, 'public/index.html'));
-        // });
+        this.express.use((req, res) => {
+        res.sendFile(path.join(__dirname, 'public/index.html'));
+        });
 
      }
 

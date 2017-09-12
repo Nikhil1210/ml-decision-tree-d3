@@ -1,7 +1,8 @@
 import { Router, Request, Response } from 'express';
 import model from '../models/model';
+import {MODEL_DATA} from "../mocks/model";
 
-export default class ModelController{
+export default class ModelController {
     constructor(){
 
     }
@@ -16,19 +17,18 @@ export default class ModelController{
      * GetModelMatrix
      */
     public GetModelMatrix() {
-        
-    }
-
-    /**
-     * GetModelData
-     */
-    public GetModelData(req: Request,res:Response) {
     //     model.find().sort({ createdAt: -1 }).exec((err, result) => {
     //     if (err) {
     //         return res.send(500);
     //     }
     //     return res.json(result);
-    // });
-            return res.json('model data');
+    // }); 
+    }
+
+    /**
+     * GetModelData
+     */
+    public ModelData(req: Request, res: Response) {
+        return res.json(MODEL_DATA);
     }
 }

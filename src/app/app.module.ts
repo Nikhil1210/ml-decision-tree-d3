@@ -8,13 +8,24 @@ MdButtonModule} from '@angular/material';
 import {ROUTES} from './app.routes';
 import {ModelComponent} from './routes/model/model.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DecisionTreeComponent } from './routes/model/decision-tree/decision-tree.component';
+import { ConfusionMatrixComponent } from './routes/model/confusion-matrix/confusion-matrix.component';
+import { FeatureRelevanceComponent } from './routes/model/feature-relevance/feature-relevance.component';
+import { ModelRulesComponent } from './routes/model/model-rules/model-rules.component';
+import {ServicesModule} from './shared/services/services.module';
+import {HttpModule} from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
-    ModelComponent
+    ModelComponent,
+    DecisionTreeComponent,
+    ConfusionMatrixComponent,
+    FeatureRelevanceComponent,
+    ModelRulesComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES, {
       useHash: false,
@@ -22,7 +33,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     }),
     MaterialModule,
     MdToolbarModule,
-    MdButtonModule
+    MdButtonModule,
+    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
