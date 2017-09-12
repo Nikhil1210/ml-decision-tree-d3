@@ -1,3 +1,15 @@
-<p>
-  confusion-matrix works!
-</p>
+<table>
+    <tr>
+        <td class="no-border"> </td>
+        <td class="td-predict" [attr.colspan]="matrix?.headers.length">
+            <i class="fa fa-arrow-right"></i> Prediction conditions
+        </td>
+    </tr>
+    <tr>
+        <th><i class="fa fa-arrow-down"></i> True conditions</th>
+        <th class="header" *ngFor="let item of matrix?.headers">{{item}}</th>
+    </tr>
+    <tr *ngFor="let row of matrix?.data">
+        <td *ngFor="let item of row" [ngClass]="item.isDaigonal? 'diagonal': 'none'"></td>
+    </tr>
+</table>

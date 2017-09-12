@@ -1,3 +1,13 @@
-<p>
-  decision-tree works!
-</p>
+<div class="div-decision-tree">
+    <form class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control" #searchBox id="input-search" placeholder="enter rating...">
+            <button class="btn btn-primary" (click)="SearchTree(searchbox.value)">
+                <i class="fa fa-search"></i>
+            </button>
+            <button class="btn btn-primary" (click)="resetSearch()">
+                <i class="fa fa-undo"></i>
+            </button>
+        </div>
+    </form>
+</div>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {PreloadAllModules, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
+import {D3Service} from 'd3-ng2-service';
 import {MaterialModule,
 MdToolbarModule,
 MdButtonModule} from '@angular/material';
@@ -14,6 +15,7 @@ import { FeatureRelevanceComponent } from './routes/model/feature-relevance/feat
 import { ModelRulesComponent } from './routes/model/model-rules/model-rules.component';
 import {ServicesModule} from './shared/services/services.module';
 import {HttpModule} from '@angular/http';
+import {ModelService} from './routes/model/model.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,7 @@ import {HttpModule} from '@angular/http';
     MdButtonModule,
     ServicesModule
   ],
-  providers: [],
+  providers: [ModelService, D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

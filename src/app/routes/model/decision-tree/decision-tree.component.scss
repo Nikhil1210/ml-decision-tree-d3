@@ -1,0 +1,62 @@
+svg,
+.div-decision-tree {
+    background: #f5f5f5;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.node rect,
+.node polygon {
+    stroke: #A9A9A9;
+    stroke-width: 1px;
+}
+
+.node ellipse {
+    fill: #bcf7cd;
+    stroke: #A9A9A9;
+    stroke-width: 1px;
+}
+
+.dt-tooltip {
+    fill: none;
+}
+
+.node-text {
+    stroke: #4c4c4c;
+    stroke-width: 5px;
+}
+
+.link {
+    fill: none;
+    stroke: #777777;
+    stroke-width: 5px;
+}
+
+.link-marked {
+    fill: none;
+    stroke: #23558c;
+    stroke-width: 8px;
+}
+
+decision-tree full-view {
+    x: 10px;
+    y: 10px;
+    height: 100%;
+}
+
+.dt-tooltip p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.dt-tooltip-arrow {
+    fill: #b2e1f0;
+    stroke: black;
+}
+
+.dt-tooltip-text {
+    fill: #444852;
+}
